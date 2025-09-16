@@ -1,69 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>New York Tamil Catholic Community</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>New York Tamil Catholic Community</title>
+<style>
+  :root{
+    --navy:#0f2a44;
+    --gold:#c9a227;
+    --bg:#f7f8fb;
+    --muted:#6b7a90;
+    --radius:18px;
+    --shadow:0 8px 24px rgba(15,42,68,.15);
+  }
+  body{margin:0;font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;color:#0e1726;background:var(--bg);}
+  h1,h2,h3{margin:0 0 .5rem;line-height:1.2}
+  header{background:#0f2a44;color:white;padding:1rem;text-align:center;position:sticky;top:0;z-index:50}
+  header nav a{color:#c9a227;margin:0 .6rem;text-decoration:none;font-weight:600}
+  header nav a:hover{color:white}
+  .hero{background:url("https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&w=1600&q=80") no-repeat center/cover;height:60vh;display:flex;align-items:center;justify-content:center;position:relative;text-align:center;color:white}
+  .hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.4);}
+  .hero .content{position:relative;z-index:1;padding:2rem}
+  .hero h1{font-size:clamp(2rem,5vw,3rem)}
+  section{padding:2.5rem 1rem;max-width:1000px;margin:auto;text-align:center}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin-top:1rem}
+  .gallery img{width:100%;border-radius:12px;box-shadow:var(--shadow);object-fit:cover;height:220px}
+  ul.clean{list-style:none;padding:0;margin:0}
+  ul.clean li{padding:.4rem 0;border-bottom:1px dashed #dbe3ed}
+  ul.clean li:last-child{border:0}
+  footer{background:#0f2a44;color:white;text-align:center;padding:1rem;margin-top:2rem}
+</style>
 </head>
 <body>
-  <header>
-    <h1>New York Tamil Catholic Community</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#schedule">Schedule</a>
-      <a href="#events">Events</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <div class="overlay">
-      <h2>Welcome to NYTCC</h2>
-      <p>A Catholic community in New York rooted in faith and enriched by Tamil culture.</p>
-    </div>
-  </section>
+<header>
+  <h1>New York Tamil Catholic Community</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#events">Events</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>The New York Tamil Catholic Community (NYTCC) gathers Tamil-speaking Catholics in the greater New York area to celebrate Mass, sacraments, and cultural traditions while serving the wider community.</p>
-  </section>
+<section class="hero">
+  <div class="content">
+    <h1>Welcome to NYTCC</h1>
+    <p>A Catholic community in New York rooted in faith and enriched by Tamil culture. Join us for worship, fellowship, and service.</p>
+  </div>
+</section>
 
-  <section id="schedule">
-    <h2>Schedule</h2>
-    <ul>
-      <li><strong>Mass:</strong> Sunday Tamil Mass — 10:30 AM; First Friday Mass — 7:00 PM</li>
-      <li><strong>Rosary:</strong> Fridays at 6:30 PM</li>
-      <li><strong>Catechism:</strong> Saturdays 10:00 AM</li>
-      <li><strong>Feast Days:</strong> As announced</li>
-    </ul>
-  </section>
+<section id="about">
+  <h2>About Us</h2>
+  <p>The <strong>New York Tamil Catholic Community (NYTCC)</strong> gathers Tamil-speaking Catholics in the greater New York area to celebrate Mass, sacraments, and cultural traditions while serving the wider community.</p>
+</section>
 
-  <section id="events">
-    <h2>Upcoming Events</h2>
-    <p><strong>Annual Retreat:</strong> Oct 12–14 at Don Bosco Retreat Center</p>
-    <p><strong>Christmas Celebration:</strong> Dec 21, 6:00 PM at Parish Hall</p>
-  </section>
+<section id="schedule">
+  <h2>Schedule</h2>
+  <ul class="clean">
+    <li><strong>Mass:</strong> Sunday Tamil Mass — 10:30 AM; First Friday Mass — 7:00 PM</li>
+    <li><strong>Rosary:</strong> Fridays at 6:30 PM</li>
+    <li><strong>Catechism:</strong> Saturdays 10:00 AM</li>
+    <li><strong>Feast Days:</strong> As announced</li>
+  </ul>
+</section>
 
-  <section id="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery">
-      <img src="images/gallery1.jpg" alt="Community event 1">
-      <img src="images/gallery2.jpg" alt="Community event 2">
-      <img src="images/gallery3.jpg" alt="Community event 3">
-    </div>
-  </section>
+<section id="events">
+  <h2>Upcoming Events</h2>
+  <p><strong>Annual Retreat:</strong> Oct 12–14 at Don Bosco Retreat Center</p>
+  <p><strong>Christmas Celebration:</strong> Dec 21, 6:00 PM at Parish Hall</p>
+</section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>📍 Address: [Insert church address here]</p>
-    <p>📞 Phone: (123) 456-7890</p>
-    <p>📧 Email: info@nytcc.org</p>
-  </section>
+<section id="gallery">
+  <h2>Community Gallery</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1524492449090-a0d08e6a5be4?auto=format&fit=crop&w=800&q=80" alt="Community event 1">
+    <img src="https://images.unsplash.com/photo-1554335029-bd9230d7a1cc?auto=format&fit=crop&w=800&q=80" alt="Community event 2">
+    <img src="https://images.unsplash.com/photo-1601700492126-cd89a70ccbd4?auto=format&fit=crop&w=800&q=80" alt="Community event 3">
+  </div>
+</section>
 
-  <footer>
-    <p>© 2025 New York Tamil Catholic Community — All rights reserved.</p>
-  </footer>
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>📍 Address: [Insert church address here]</p>
+  <p>📞 Phone: (123) 456-7890</p>
+  <p>📧 Email: info@nytcc.org</p>
+</section>
+
+<footer>
+  © 2025 New York Tamil Catholic Community — All rights reserved.
+</footer>
+
 </body>
 </html>
