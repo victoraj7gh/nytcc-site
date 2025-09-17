@@ -1,76 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>New York Tamil Catholic Community</title>
-<link rel="stylesheet" href="style.css">
+<style>
+  :root{
+    --navy:#0f2a44;
+    --gold:#c9a227;
+    --bg:#f7f8fb;
+    --muted:#6b7a90;
+    --radius:18px;
+    --shadow: 0 10px 30px rgba(15,42,68,0.12);
+  }
+  body{margin:0;font:16px/1.6 system-ui,Segoe UI,Roboto,Arial,sans-serif;color:#0e1726;background:var(--bg);}
+  h1,h2,h3{margin:0 0 .5rem;line-height:1.2}
+  .container{width:min(1100px,92%);margin-inline:auto}
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(6px);box-shadow:0 2px 12px rgba(0,0,0,.06);}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:.6rem 0}
+  nav a{margin:0 .5rem;color:var(--navy);font-weight:600;text-decoration:none}
+  nav a:hover{color:var(--gold)}
+  .hero{
+    color:white; text-align:center;
+    background:url('WhatsApp Image 2025-08-23 at 1.32.38 PM.jpeg') center/cover no-repeat;
+    display:flex;align-items:center;justify-content:center;
+    min-height:70vh;position:relative;
+  }
+  .hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.4);}
+  .hero .copy{position:relative;z-index:1;padding:2rem}
+  .hero h1{font-size:clamp(2rem,5vw,3rem);color:#fff}
+  .hero p{max-width:650px;margin-inline:auto;font-size:1.1rem;color:#f1f1f1}
+  .section{padding:3rem 0}
+  .section h2{color:var(--navy);margin-bottom:1rem;text-align:center}
+  .card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:1rem;margin-bottom:1rem}
+  ul.clean{list-style:none;padding:0;margin:0}
+  ul.clean li{padding:.4rem 0;border-bottom:1px dashed #e6ebf3}
+  ul.clean li:last-child{border-bottom:0}
+  .grid{display:grid;gap:1rem}
+  .grid.cols-2{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+  .gallery{display:grid;gap:.75rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+  .gallery img{border-radius:12px;width:100%;height:250px;object-fit:cover;box-shadow:var(--shadow)}
+  footer{background:var(--navy);color:#dfe7f2;padding:2rem 0;margin-top:2rem;text-align:center}
+</style>
 </head>
 <body>
 
 <header>
-  <div class="branding">
-    <img src="images/logo.png" alt="NYTCC Logo" class="logo">
-    <span class="title">New York Tamil Catholic Community</span>
+  <div class="container nav">
+    <div><strong>NYTCC</strong></div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#events">Events</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </div>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#schedule">Schedule</a>
-    <a href="#events">Events</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-  </nav>
 </header>
 
-<section class="hero">
-  <div class="hero-text">
+<section class="hero" id="home">
+  <div class="copy">
     <h1>Welcome to NYTCC</h1>
     <p>A Catholic community in New York rooted in faith and enriched by Tamil culture. Join us for worship, fellowship, and service.</p>
   </div>
-  <div class="hero-image"></div>
 </section>
 
-<section id="about">
-  <h2>About Us</h2>
-  <div class="card">
+<section class="section" id="about">
+  <div class="container">
+    <h2>About Us</h2>
     <p>The <strong>New York Tamil Catholic Community (NYTCC)</strong> gathers Tamil-speaking Catholics in the greater New York area to celebrate Mass, sacraments, and cultural traditions while serving the wider community.</p>
   </div>
 </section>
 
-<section id="schedule">
-  <h2>Schedule</h2>
-  <div class="card">
-    <ul class="clean">
-      <li><strong>Mass:</strong> Sunday Tamil Mass — 10:30 AM; First Friday Mass — 7:00 PM</li>
-      <li><strong>Rosary:</strong> Fridays at 6:30 PM</li>
-      <li><strong>Catechism:</strong> Saturdays 10:00 AM</li>
-      <li><strong>Feast Days:</strong> As announced</li>
-    </ul>
+<section class="section" id="schedule">
+  <div class="container">
+    <h2>Schedule</h2>
+    <div class="grid cols-2">
+      <div class="card">
+        <h3>Mass Schedule</h3>
+        <ul class="clean">
+          <li>Sunday Mass (Tamil) — 10:30 AM</li>
+          <li>First Friday Mass — 7:00 PM</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Rosary Schedule</h3>
+        <ul class="clean">
+          <li>Friday Rosary & Novena — 6:30 PM</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Catechism Classes</h3>
+        <ul class="clean">
+          <li>Saturdays — 10:00 AM (Children & Youth)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Other Devotions</h3>
+        <ul class="clean">
+          <li>Special Feast Days — See Events</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="events">
-  <h2>Upcoming Events</h2>
-  <div class="card"><strong>Annual Retreat:</strong> Oct 12–14 at Don Bosco Retreat Center</div>
-  <div class="card"><strong>Christmas Celebration:</strong> Dec 21, 6:00 PM at Parish Hall</div>
-</section>
-
-<section id="gallery">
-  <h2>Community Gallery</h2>
-  <div class="gallery">
-    <a href="gallery/community.html" class="gallery-card">
-      <img src="images/community-thumb.jpg" alt="Community Event">
-      <p>Community Event</p>
-    </a>
+<section class="section" id="events">
+  <div class="container">
+    <h2>Upcoming Events</h2>
+    <div class="card">
+      <h3>Annual Retreat — Oct 12–14</h3>
+      <p>Don Bosco Retreat Center. Register with the council.</p>
+    </div>
+    <div class="card">
+      <h3>Christmas Celebration — Dec 21, 6:00 PM</h3>
+      <p>Parish Hall. Carols and cultural program.</p>
+    </div>
   </div>
 </section>
 
-<section id="contact">
-  <h2>Contact Us</h2>
-  <div class="card">
-    <p>📍 Address: [Insert church address here]</p>
-    <p>📞 Phone: (123) 456-7890</p>
-    <p>📧 Email: info@nytcc.org</p>
+<section class="section" id="gallery">
+  <div class="container">
+    <h2>Community Gallery</h2>
+    <div class="gallery">
+      <img src="WhatsApp Image 2025-08-23 at 1.32.38 PM.jpeg" alt="Children enjoying ice cream at church event">
+      <img src="WhatsApp Image 2025-08-23 at 1.31.51 PM.jpeg" alt="Community BBQ with corn and chicken">
+      <img src="WhatsApp Image 2025-08-23 at 1.25.56 PM.jpeg" alt="Serving ice cream at community gathering">
+      <img src="WhatsApp Image 2025-08-23 at 1.20.37 PM.jpeg" alt="Parishioners cooking at BBQ event">
+      <img src="WhatsApp Image 2025-08-23 at 1.19.59 PM.jpeg" alt="Father with children and church dog">
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p>📍 Address: [Insert address]<br>
+       📞 Phone: (123) 456-7890<br>
+       📧 Email: info@nytcc.org</p>
   </div>
 </section>
 
