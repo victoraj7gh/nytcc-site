@@ -22,11 +22,11 @@
   nav a:hover{color:var(--gold)}
   .hero{
     color:white; text-align:center;
-    background:url('WhatsApp Image 2025-08-23 at 1.32.38 PM.jpeg') center/cover no-repeat;
+    background:url('https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
     display:flex;align-items:center;justify-content:center;
     min-height:70vh;position:relative;
   }
-  .hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.4);}
+  .hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45);}
   .hero .copy{position:relative;z-index:1;padding:2rem}
   .hero h1{font-size:clamp(2rem,5vw,3rem);color:#fff}
   .hero p{max-width:650px;margin-inline:auto;font-size:1.1rem;color:#f1f1f1}
@@ -38,8 +38,8 @@
   ul.clean li:last-child{border-bottom:0}
   .grid{display:grid;gap:1rem}
   .grid.cols-2{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-  .gallery{display:grid;gap:.75rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-  .gallery img{border-radius:12px;width:100%;height:250px;object-fit:cover;box-shadow:var(--shadow)}
+  .gallery{display:grid;gap:.75rem;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+  .gallery img{border-radius:12px;width:100%;height:200px;object-fit:cover;box-shadow:var(--shadow)}
   footer{background:var(--navy);color:#dfe7f2;padding:2rem 0;margin-top:2rem;text-align:center}
 </style>
 </head>
@@ -121,13 +121,11 @@
 
 <section class="section" id="gallery">
   <div class="container">
-    <h2>Community Gallery</h2>
+    <h2>Gallery</h2>
     <div class="gallery">
-      <img src="WhatsApp Image 2025-08-23 at 1.32.38 PM.jpeg" alt="Children enjoying ice cream at church event">
-      <img src="WhatsApp Image 2025-08-23 at 1.31.51 PM.jpeg" alt="Community BBQ with corn and chicken">
-      <img src="WhatsApp Image 2025-08-23 at 1.25.56 PM.jpeg" alt="Serving ice cream at community gathering">
-      <img src="WhatsApp Image 2025-08-23 at 1.20.37 PM.jpeg" alt="Parishioners cooking at BBQ event">
-      <img src="WhatsApp Image 2025-08-23 at 1.19.59 PM.jpeg" alt="Father with children and church dog">
+      <img src="https://images.unsplash.com/photo-1601700492126-cd89a70ccbd4?auto=format&fit=crop&w=800&q=80" alt="Community event">
+      <img src="https://images.unsplash.com/photo-1524492449090-a0d08e6a5be4?auto=format&fit=crop&w=800&q=80" alt="Church interior">
+      <img src="https://images.unsplash.com/photo-1554335029-bd9230d7a1cc?auto=format&fit=crop&w=800&q=80" alt="Choir singing">
     </div>
   </div>
 </section>
