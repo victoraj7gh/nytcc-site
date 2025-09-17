@@ -1,27 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Community Event Gallery - NYTCC</title>
-<link rel="stylesheet" href="../style.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Community Gallery – NYTCC</title>
+<meta name="description" content="NYTCC community photo gallery." />
+
+<style>
+  :root{
+    --navy:#0f2a44; --gold:#c9a227; --ink:#0e1726; --bg:#f7f8fb;
+    --card:#ffffff; --muted:#6b7a90; --radius:18px;
+    --shadow:0 10px 30px rgba(15,42,68,0.12);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.6 system-ui,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--ink);background:var(--bg);}
+  a{color:var(--navy);text-decoration:none}
+  .container{width:min(1100px,92%);margin-inline:auto}
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);box-shadow:0 2px 12px rgba(0,0,0,.06);}
+  .bar{display:flex;justify-content:space-between;align-items:center;padding:.8rem 0}
+  .back{font-weight:700}
+  h1{margin:0}
+  main{padding:clamp(2rem,5vw,3rem) 0}
+  .grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .card{background:var(--card);border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
+  .card img{width:100%;height:220px;object-fit:cover;display:block}
+  footer{background:var(--navy);color:#dfe7f2;text-align:center;padding:1rem;margin-top:2rem}
+</style>
 </head>
 <body>
+
 <header>
-  <a href="../index.html">← Back to Home</a>
-  <h1>Community Event Gallery</h1>
+  <div class="container bar">
+    <a class="back" href="index.html#resources">← Back to Resources</a>
+    <h1>Community Gallery</h1>
+    <span></span>
+  </div>
 </header>
 
-<section>
-  <div class="gallery">
-    <img src="../images/community1.jpg" alt="Community event 1">
-    <img src="../images/community2.jpg" alt="Community event 2">
-    <img src="../images/community3.jpg" alt="Community event 3">
+<main>
+  <div class="container">
+    <p class="muted" style="color:var(--muted);margin-top:0">Click images to open full size in a new tab.</p>
+
+    <div class="grid">
+      <!-- Replace these src values with your real photos in /images -->
+      <a class="card" href="https://images.unsplash.com/photo-1524492449090-a0d08e6a5be4?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
+        <img src="https://images.unsplash.com/photo-1524492449090-a0d08e6a5be4?auto=format&fit=crop&w=800&q=80" alt="Community event 1">
+      </a>
+      <a class="card" href="https://images.unsplash.com/photo-1554335029-bd9230d7a1cc?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
+        <img src="https://images.unsplash.com/photo-1554335029-bd9230d7a1cc?auto=format&fit=crop&w=800&q=80" alt="Community event 2">
+      </a>
+      <a class="card" href="https://images.unsplash.com/photo-1601700492126-cd89a70ccbd4?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
+        <img src="https://images.unsplash.com/photo-1601700492126-cd89a70ccbd4?auto=format&fit=crop&w=800&q=80" alt="Community event 3">
+      </a>
+      <a class="card" href="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
+        <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&w=800&q=80" alt="Church exterior">
+      </a>
+      <a class="card" href="https://images.unsplash.com/photo-1495653797063-114787b77b23?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
+        <img src="https://images.unsplash.com/photo-1495653797063-114787b77b23?auto=format&fit=crop&w=800&q=80" alt="Church interior">
+      </a>
+      <a class="card" href="https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
+        <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=800&q=80" alt="Choir singing">
+      </a>
+    </div>
   </div>
-</section>
+</main>
 
 <footer>
-  © 2025 New York Tamil Catholic Community
+  © 2025 New York Tamil Catholic Community — All rights reserved.
 </footer>
+
 </body>
 </html>
