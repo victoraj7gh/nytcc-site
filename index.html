@@ -4,83 +4,352 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>New York Tamil Catholic Community</title>
+<meta name="description" content="New York Tamil Catholic Community — a place of faith, service, and Tamil Catholic fellowship." />
+
 <style>
   :root{
     --navy:#0f2a44;
     --gold:#c9a227;
+    --gold-700:#a3831e;
+    --ink:#0e1726;
     --bg:#f7f8fb;
+    --card:#ffffff;
     --muted:#6b7a90;
     --radius:18px;
-    --shadow:0 10px 30px rgba(15,42,68,0.12);
+    --shadow: 0 10px 30px rgba(15,42,68,0.12);
   }
-  body{margin:0;font:16px/1.6 system-ui,Segoe UI,Roboto,Arial,sans-serif;color:#0e1726;background:var(--bg);}
-  h1,h2,h3{margin:0 0 .5rem;line-height:1.2}
+
+  /* Reset-ish */
+  *,*::before,*::after{box-sizing:border-box}
+  body{
+    margin:0;
+    font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+  }
+  img{max-width:100%;display:block}
+  a{color:var(--navy);text-decoration:none}
+  a.button{display:inline-block;padding:.75rem 1rem;border-radius:999px;background:var(--gold);color:#111;font-weight:700;box-shadow:var(--shadow);transition:.2s transform}
+  a.button:is(:hover,:focus){transform:translateY(-1px);background:var(--gold-700)}
+  h1,h2,h3{line-height:1.2;margin:0 0 .5rem}
+  h2{font-size:clamp(1.5rem,2vw+1rem,2rem)}
+  p{margin:.25rem 0 .75rem}
   .container{width:min(1100px,92%);margin-inline:auto}
-  
-  /* Header */
-  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);box-shadow:0 2px 12px rgba(0,0,0,.06);}
-  .nav{display:flex;justify-content:space-between;align-items:center;padding:.6rem 0}
-  .branding{display:flex;align-items:center;gap:.6rem}
-  .branding img{height:45px}
-  .branding span{font-weight:700;color:var(--navy);font-size:1.1rem}
-  nav a{margin:0 .5rem;color:var(--navy);font-weight:600;text-decoration:none}
-  nav a:hover{color:var(--gold)}
-  
-  /* Hero split */
-  .hero{display:grid;grid-template-columns:1fr 1fr;min-height:70vh;align-items:center;background:#fff;}
-  .hero-text{padding:2rem}
-  .hero-text h1{font-size:clamp(2rem,5vw,3rem);color:var(--navy);}
-  .hero-text p{max-width:500px;font-size:1.1rem;color:#333;}
-  .hero-image{background:url('images/church.jpg') center/cover no-repeat;min-height:70vh;}
-  
-  @media(max-width:768px){
-    .hero{grid-template-columns:1fr;}
-    .hero-image{min-height:40vh;}
+
+  /* Header / Nav */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,255,255,.9);
+    backdrop-filter:saturate(1.1) blur(8px);
+    box-shadow:0 2px 12px rgba(0,0,0,.06);
   }
-  
-  /* Sections */
-  .section{padding:3rem 0}
-  .section h2{color:var(--navy);margin-bottom:1rem;text-align:center}
-  .card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:1rem;margin-bottom:1rem}
-  ul.clean{list-style:none;padding:0;margin:0}
-  ul.clean li{padding:.4rem 0;border-bottom:1px dashed #e6ebf3}
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:.6rem 0;
+  }
+  .brand{display:flex;align-items:center;gap:.75rem}
+  .brand .title{font-weight:800;letter-spacing:.3px}
+  .brand small{display:block;color:var(--muted);font-weight:500;margin-top:-2px}
+  .links{display:flex;gap:.75rem;flex-wrap:wrap}
+  .links a{padding:.45rem .7rem;border-radius:10px;color:var(--navy);font-weight:600}
+  .links a:hover{background:#eef2f8}
+
+  /* Hero */
+  .hero{
+    position:relative; overflow:hidden;
+    background:
+      radial-gradient(1000px 300px at 20% -10%, rgba(201,162,39,.25), transparent 60%),
+      radial-gradient(800px 280px at 100% 0%, rgba(15,42,68,.25), transparent 60%),
+      linear-gradient(180deg, #ffffff, #f3f6fb 50%, #eef3fa);
+    border-bottom:1px solid #e6ecf5;
+  }
+  .hero-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center;padding:clamp(2rem,5vw,4rem) 0}
+  .hero .copy h1{font-size:clamp(1.8rem,2.5vw+1.2rem,2.6rem)}
+  .hero .copy p{color:var(--muted);font-size:1.05rem}
+  .hero .cta{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem}
+
+  /* Logo badge (big visual on hero) */
+  .badge{
+    background:var(--card);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:1rem;
+  }
+
+  /* Section blocks */
+  section{padding:clamp(2rem,5vw,3.5rem) 0}
+  .section-title{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
+  .section-title .dot{width:10px;height:10px;border-radius:50%;background:var(--gold)}
+  .grid{display:grid;gap:1.1rem}
+  .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+  .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+  .card{
+    background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:1.1rem
+  }
+  .muted{color:var(--muted)}
+  ul.clean{margin:.2rem 0;padding:0;list-style:none}
+  ul.clean li{padding:.35rem 0;border-bottom:1px dashed #e6ebf3}
   ul.clean li:last-child{border-bottom:0}
-  .grid{display:grid;gap:1rem}
-  .grid.cols-2{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-  .gallery{display:grid;gap:.75rem;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
-  .gallery img{border-radius:12px;width:100%;height:200px;object-fit:cover;box-shadow:var(--shadow)}
-  
+
+  /* Events */
+  .event{display:flex;gap:.9rem;align-items:flex-start}
+  .event .date{
+    width:72px;flex:0 0 72px;text-align:center;
+    border-radius:14px;background:#0f2a4412;border:1px solid #0f2a4422;padding:.35rem .25rem
+  }
+  .event .date strong{display:block;color:var(--navy);font-size:1.1rem}
+  .event .date span{display:block;color:var(--muted);font-size:.88rem}
+
   /* Footer */
-  footer{background:var(--navy);color:#dfe7f2;padding:2rem 0;margin-top:2rem;text-align:center}
+  footer{background:var(--navy);color:#dfe7f2;padding:2rem 0;margin-top:1rem}
+  footer a{color:#e9cf6a}
+  .footgrid{display:grid;gap:1.2rem}
+  .footgrid.cols-3{grid-template-columns:repeat(3,1fr)}
+  .copyline{border-top:1px solid rgba(255,255,255,.12);margin-top:1.2rem;padding-top:.8rem;color:#aac1d6;font-size:.9rem}
+
+  /* Responsive */
+  @media (max-width:900px){
+    .hero-inner{grid-template-columns:1fr}
+    .grid.cols-3{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:640px){
+    .links{display:none}
+    .grid.cols-2,.grid.cols-3{grid-template-columns:1fr}
+  }
+
+  /* Smooth anchor scroll */
+  html{scroll-behavior:smooth}
 </style>
 </head>
 <body>
 
 <header>
   <div class="container nav">
-    <div class="branding">
-      <img src="images/logo.png" alt="NYTCC Logo">
-      <span>New York Tamil Catholic Community</span>
+    <div class="brand">
+      <!-- Inline SVG logo (navy/gold) -->
+      <svg width="40" height="40" viewBox="0 0 64 64" aria-label="NYTCC logo" role="img">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop stop-color="#c9a227" offset="0"/>
+            <stop stop-color="#a3831e" offset="1"/>
+          </linearGradient>
+        </defs>
+        <circle cx="32" cy="32" r="30" fill="#0f2a44" stroke="url(#g)" stroke-width="4"/>
+        <!-- Cross -->
+        <rect x="30" y="14" width="4" height="36" rx="2" fill="url(#g)"/>
+        <rect x="16" y="28" width="32" height="4" rx="2" fill="url(#g)"/>
+        <!-- Subtle Tamil kolam dot motif -->
+        <circle cx="32" cy="46" r="3" fill="#c9a227" opacity=".9"/>
+      </svg>
+      <div>
+        <div class="title">New York Tamil Catholic Community</div>
+        <small>A place of faith, service, and Tamil Catholic fellowship</small>
+      </div>
     </div>
-    <nav>
+    <nav class="links" aria-label="Primary">
       <a href="#about">About</a>
-      <a href="#schedule">Schedule</a>
+      <a href="#mass">Mass</a>
+      <a href="#ministries">Ministries</a>
       <a href="#events">Events</a>
-      <a href="#gallery">Gallery</a>
+      <a href="#resources">Resources</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
 <section class="hero" id="home">
-  <div class="hero-text">
-    <h1>Welcome to NYTCC</h1>
-    <p>A Catholic community in New York rooted in faith and enriched by Tamil culture. Join us for worship, fellowship, and service.</p>
+  <div class="container hero-inner">
+    <div class="copy">
+      <h1>Welcome to NYTCC</h1>
+      <p>
+        We’re a vibrant Catholic community in New York rooted in the Gospel and enriched by Tamil heritage.
+        Join us for worship, fellowship, and service.
+      </p>
+      <div class="cta">
+        <a class="button" href="#mass">See Mass Schedule</a>
+        <a class="button" style="background:#0f2a44;color:#fff" href="#contact">Plan Your Visit</a>
+      </div>
+    </div>
+    <div class="badge" aria-hidden="true">
+      <!-- Large decorative emblem -->
+      <svg viewBox="0 0 800 400" width="100%" height="100%">
+        <rect width="100%" height="100%" rx="20" fill="#0f2a4410"/>
+        <g transform="translate(60,50)">
+          <circle cx="130" cy="130" r="110" fill="#0f2a44" stroke="#c9a227" stroke-width="14"/>
+          <rect x="124" y="55" width="12" height="150" rx="6" fill="#c9a227"/>
+          <rect x="60" y="115" width="140" height="12" rx="6" fill="#c9a227"/>
+        </g>
+        <text x="340" y="120" fill="#0f2a44" font-size="32" font-weight="800">New York Tamil Catholic Community</text>
+        <text x="340" y="160" fill="#6b7a90" font-size="20">Faith • Service • Fellowship</text>
+      </svg>
+    </div>
   </div>
-  <div class="hero-image"></div>
 </section>
 
-<!-- Keep your About, Schedule, Events, Gallery, Contact, Footer sections here (unchanged) -->
+<section id="about">
+  <div class="container">
+    <div class="section-title"><span class="dot"></span><h2>About Us</h2></div>
+    <div class="grid cols-2">
+      <div class="card">
+        <p>
+          The <strong>New York Tamil Catholic Community (NYTCC)</strong> is a family of faith rooted in
+          the teachings of the Catholic Church and enriched by Tamil culture. We welcome all who seek to grow
+          in prayer, discipleship, and service.
+        </p>
+        <p class="muted">
+          “To nurture faith in Christ, strengthen families, and serve the wider community through prayer,
+          sacraments, and charitable works.”
+        </p>
+      </div>
+      <div class="card">
+        <h3>Leadership</h3>
+        <ul class="clean">
+          <li><strong>Chaplain / Priest:</strong> (Add name)</li>
+          <li><strong>Community Council:</strong> (Add members)</li>
+          <li><strong>Ministry Leads:</strong> Youth, Choir, Outreach, Catechism</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mass">
+  <div class="container">
+    <div class="section-title"><span class="dot"></span><h2>Mass Schedule</h2></div>
+    <div class="grid cols-2">
+      <div class="card">
+        <h3>Regular Schedule</h3>
+        <ul class="clean">
+          <li>Sunday Mass (Tamil) — <strong>10:30 AM</strong></li>
+          <li>First Friday Mass — <strong>7:00 PM</strong></li>
+          <li>Rosary &amp; Novena — <strong>Fridays 6:30 PM</strong></li>
+          <li>Holy Days &amp; Feast Celebrations — <em>See Events</em></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Location</h3>
+        <p class="muted">Replace with your worship location. Map placeholder below:</p>
+        <div style="aspect-ratio: 16/9; background:#0f2a4412; border:1px solid #0f2a4422; border-radius:14px; display:grid; place-items:center;">
+          <span class="muted">Embed Google Map here</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ministries">
+  <div class="container">
+    <div class="section-title"><span class="dot"></span><h2>Ministries</h2></div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Youth Ministry</h3>
+        <p class="muted">Bringing faith alive for the next generation with prayer, service, and community.</p>
+      </div>
+      <div class="card">
+        <h3>Choir &amp; Music</h3>
+        <p class="muted">Serving through sacred music and Tamil hymns to lead our community in worship.</p>
+      </div>
+      <div class="card">
+        <h3>Outreach</h3>
+        <p class="muted">Supporting the poor, the sick, and the marginalized through acts of charity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="events">
+  <div class="container">
+    <div class="section-title"><span class="dot"></span><h2>Upcoming Events</h2></div>
+    <div class="grid cols-2">
+      <div class="card event">
+        <div class="date"><strong>Oct 12</strong><span>Retreat</span></div>
+        <div>
+          <h3>Annual Community Retreat</h3>
+          <p class="muted">Don Bosco Retreat Center • Oct 12–14 • Register with the council.</p>
+        </div>
+      </div>
+      <div class="card event">
+        <div class="date"><strong>Dec 21</strong><span>Feast</span></div>
+        <div>
+          <h3>Christmas Celebration</h3>
+          <p class="muted">Parish Hall • 6:00 PM • Cultural program &amp; carols in Tamil and English.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="resources">
+  <div class="container">
+    <div class="section-title"><span class="dot"></span><h2>Resources</h2></div>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Weekly Bulletin</h3>
+        <p class="muted">Latest announcements, readings, and community notices.</p>
+        <a class="button" href="#" aria-disabled="true">Download PDF</a>
+      </div>
+      <div class="card">
+        <h3>Homilies / Sermons</h3>
+        <p class="muted">Watch or listen to recent homilies (YouTube/Vimeo embed).</p>
+        <a class="button" href="#" aria-disabled="true">Watch Now</a>
+      </div>
+      <div class="card">
+        <h3>Prayers &amp; Novenas</h3>
+        <p class="muted">Tamil &amp; English prayer guides for families and groups.</p>
+        <a class="button" href="#" aria-disabled="true">View Prayers</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-title"><span class="dot"></span><h2>Contact</h2></div>
+    <div class="grid cols-2">
+      <div class="card">
+        <h3>Get in Touch</h3>
+        <p>
+          📍 Address: <em>Add worship location</em><br/>
+          📞 Phone: <em>(123) 456-7890</em><br/>
+          📧 Email: <a href="mailto:info@nytcc.org">info@nytcc.org</a>
+        </p>
+        <div class="muted">For updates, follow us on social media (add links): Facebook • YouTube • Instagram</div>
+      </div>
+      <div class="card">
+        <h3>Message Us</h3>
+        <p class="muted">On a live site you’d embed a Google Form here. In CodePen, this demo form just shows structure.</p>
+        <form onsubmit="alert('Thanks! We will get back to you.'); return false;">
+          <div style="display:grid;gap:.6rem">
+            <input required placeholder="Your name" style="padding:.7rem;border-radius:10px;border:1px solid #d8e1ee" />
+            <input required type="email" placeholder="Your email" style="padding:.7rem;border-radius:10px;border:1px solid #d8e1ee" />
+            <textarea required rows="4" placeholder="How can we help?" style="padding:.7rem;border-radius:10px;border:1px solid #d8e1ee;resize:vertical"></textarea>
+            <button class="button" type="submit" style="border:0; cursor:pointer">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footgrid cols-3">
+      <div>
+        <h3 style="margin:0 0 .5rem">New York Tamil Catholic Community</h3>
+        <p class="muted">Faith • Service • Fellowship</p>
+      </div>
+      <div>
+        <h3 style="margin:0 0 .5rem">Quick Links</h3>
+        <p><a href="#mass">Mass Schedule</a> · <a href="#ministries">Ministries</a> · <a href="#events">Events</a></p>
+      </div>
+      <div>
+        <h3 style="margin:0 0 .5rem">Contact</h3>
+        <p class="muted">info@nytcc.org</p>
+      </div>
+    </div>
+    <div class="copyline">© 2025 New York Tamil Catholic Community — All rights reserved.</div>
+  </div>
+</footer>
 
 </body>
 </html>
